@@ -97,6 +97,7 @@ class Environment:
         # Create a white background
         self.image.fill(255)
 
+        agent_radius = 2
         # self.image = cv2.imread('buda.jpg', 1)
         # self.image = cv2.resize(self.image, (500 * self.magnification, 500 * self.magnification), interpolation = cv2.INTER_AREA)
         # # Draw the obstacle
@@ -112,7 +113,6 @@ class Environment:
             # Draw the agent
             state = agent.get_int_state()
             agent_centre = (state[0] * self.magnification, state[1] * self.magnification)
-            agent_radius = 2
             agent_colour = agent.get_colour()
             cv2.circle(self.image, agent_centre, agent_radius, agent_colour, cv2.FILLED)
 
@@ -123,13 +123,13 @@ class Environment:
                 dest_colour = (255, 0, 0)
                 cv2.circle(self.image, dest_centre, dest_radius, dest_colour, cv2.FILLED)
 
-            # # Draw a line path
-            # initial_state = agent.get_int_initial_state()
-            # cv2.line(self.image,
-            #          (initial_state[0] * self.magnification, initial_state[1] * self.magnification),
-            #          (state[0] * self.magnification, state[1] * self.magnification),
-            #          (10, 250, 0),
-            #          1, lineType=8)
+                # # Draw a line path
+                # initial_state = agent.get_int_initial_state()
+                # cv2.line(self.image,
+                #          (initial_state[0] * self.magnification, initial_state[1] * self.magnification),
+                #          (state[0] * self.magnification, state[1] * self.magnification),
+                #          (10, 250, 0),
+                #          1, lineType=8)
 
         # print(self.image.shape)
         # self.overlay = self.image.copy()

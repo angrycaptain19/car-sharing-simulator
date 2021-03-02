@@ -79,10 +79,7 @@ class Agent():
         if self.status == 'In demand' and self.wait_time != 0:
             self.wait_time -= 1
 
-        elif self.status == 'Parked':
-            pass
-
-        else:
+        elif self.status != 'Parked':
             self.change_status('Active')
             # 4. Make the step
             self.state += self.speed_vector
